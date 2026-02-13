@@ -1,8 +1,4 @@
-body {
-    background-color: rgb(51, 51, 51);
-    width: 100%;
-    height: 100vh;
-}
+
 .campuslogo {
     min-width:200px;
     min-height:100px; 
@@ -31,16 +27,27 @@ main{
     justify-content: center;
 }
 .smallcontainer {
-    background-color: transparent;
-    width: 364px;
-    height: 390px;
-    padding: 40px 64px 24px;
-    border: 4px solid gray;
+    background-color: #333333;
+    width: 500px;
+    height: 462px;
     border-radius: 2%;
-    box-shadow: 0 0 100px rgb(84, 71, 201);
+    box-shadow: 0 0 100px #6b5ffd;
     display: flex;
     flex-direction: column;
     align-items: center;
+    position: relative;
+    overflow: visible;
+}
+.blurcontainer{
+    width: 370px;
+    height: 400px;
+    padding: 40px 64px 24px;
+    border-radius: 2%;
+    border: 4px solid rgb(152 153 156);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    backdrop-filter: blur(9px);
 }
 .mediumtext {
     font-size: 24px;
@@ -66,6 +73,13 @@ body {
     display: flex;
     align-items: center;
     flex-direction: column;
+    background-image: url(../MEDIA/starts.png);
+    background-color: #313338;
+    width: 100%;
+    height: 100vh;
+    animation-name: rotate;
+    animation: ease 1s infinite;
+    overflow: hidden;
 }
 .loginGoogle {
     background-color: white;
@@ -96,4 +110,27 @@ body {
 }
 #ppdArriba {
     margin: 0;
+}
+.Hologram{
+    width: 220px;
+    size: 220px;
+    position: absolute;
+    animation: ease-in-out;
+    animation-duration: 4s;
+    animation-iteration-count: infinite;
+    animation-name: hola;
+}
+.hologramPlanet{
+    right: -10rem;
+    top: 1%;
+    
+}
+.hologramCircle{ 
+    left: -10rem;
+    top: 45%;
+}
+@keyframes hola {
+    0%{transform: translateY(5px);}
+    50%{transform: translateY(-5px);}
+    100%{transform: translateY(5px);}
 }
