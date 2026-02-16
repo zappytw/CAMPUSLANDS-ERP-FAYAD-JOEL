@@ -1,34 +1,13 @@
-const canvas = document.getElementById("starfield");
-const ctx = canvas.getContext("2d");
-
-canvas.width = window.innerWidth;
-canvas.height = window.innerHeight;
-
-let stars = [];
-
-for(let i=0; i<200; i++){
-  stars.push({
-    x: Math.random() * canvas.width,
-    y: Math.random() * canvas.height,
-    size: Math.random() * 2
-  });
+const returnButton = document.getElementById("return_Button")
+const loginForm = document.getElementById("login_Form")
+const hideable = document.getElementById("hideable")
+function showLogin() {
+  returnButton.classList.remove("hidden")
+  loginForm.classList.remove("hidden")
+  hideable.classList.add("hidden")
 }
-
-function drawStars() {
-  ctx.fillStyle = "black";
-  ctx.fillRect(0, 0, canvas.width, canvas.height);
-
-  ctx.fillStyle = "white";
-  stars.forEach(star => {
-    ctx.beginPath();
-    ctx.arc(star.x, star.y, star.size, 0, Math.PI*2);
-    ctx.fill();
-  });
+function hideLogin() {
+  returnButton.classList.add("hidden")
+  loginForm.classList.add("hidden")
+  hideable.classList.remove("hidden")
 }
-
-function animate() {
-  drawStars();
-  requestAnimationFrame(animate);
-}
-
-animate();

@@ -7,7 +7,6 @@
     margin: 128px 410px 32px;
 }
 p {
-    font-family: "Mona Sans", sans-serif;
     font-optical-sizing: auto;
     font-style: normal;
     color: #F9FBFC;
@@ -48,14 +47,25 @@ main{
     flex-direction: column;
     align-items: center;
     backdrop-filter: blur(9px);
+    justify-content: center;
+    text-align: center;
 }
-.mediumtext {
+.text24px {
     font-size: 24px;
     font-weight: 500;
+    margin: 0px;
 }
 .bigtext {
-    font-size: 31px;
+    font-size: clamp(20px, 2.6vw, 31px);
     font-weight: 500;
+}
+.text14px {
+    font-size: 14px;
+    margin: 0px;
+}
+.text20px {
+    font-size: 20px;
+    margin: 0px;
 }
 #textoIndexHeader1{
     margin:0px;
@@ -80,56 +90,153 @@ body {
     animation-name: rotate;
     animation: ease 1s infinite;
     overflow: hidden;
+    font-family: "Mona Sans", sans-serif;
 }
-.loginGoogle {
-    background-color: white;
-    width: 362px;
-    height: 42px;
-    border: 1px solid white;
+.buttonLogin{
+    width: 100%;
+    min-height: 42px;
     border-radius: 10px;
-    color: #44546F;
-    font-size: 18px;
+    border: 1px solid;
+    border-radius: 10px;
     display: flex;
     justify-content: center;
     align-items: center;
     gap: 8px;
     cursor: pointer;
+    font-size: 18px;
+}
+.purpleButton{
+    background-color: #6b5ffd;
+    border-color: #6b5ffd;
+    color: white;
+}
+.loginGoogle {
+    background-color: white;
+    border-color: white;
+    color: #44546F;
 }
 #politicasPrivacidadDiv {
     display: flex;
     align-items: center;
     flex-direction: column;
     gap: 0px;
+    margin: 24px 0;
 }
 #aSmallText {
-    font-family: "Mona Sans", sans-serif;
-    font-optical-sizing: auto;
-    font-style: normal;
-    color: #F9FBFC;
+    color: #F9FBFC !important;
     margin: 0px;
+}
+a#aSmallText,
+a#aSmallText:visited,
+a#aSmallText:active,
+a#aSmallText:hover {
+    color: #F9FBFC !important;
 }
 #ppdArriba {
     margin: 0;
 }
-.Hologram{
-    width: 220px;
-    size: 220px;
+.floater{
     position: absolute;
     animation: ease-in-out;
     animation-duration: 4s;
     animation-iteration-count: infinite;
-    animation-name: hola;
+    animation-name: float;
 }
 .hologramPlanet{
     right: -10rem;
     top: 1%;
-    
+    width: 220px;
+    size: 220px;
 }
 .hologramCircle{ 
     left: -10rem;
     top: 45%;
+    width: 220px;
+    size: 220px;
 }
-@keyframes hola {
+.planet {
+    position: absolute;
+    bottom: -8rem;
+    right: -3rem;
+    width: 500px;
+    height: 214px;
+}
+.astronaut{
+    width: 369px;
+    height: 145px;
+    bottom: -6rem;
+    right: 6rem;
+    z-index: 1;
+}
+.infoCodigoMagico{
+    display: flex;
+    background-color: #2b2d31;
+    padding: 8px 12px;
+    border-radius: 10px;
+    gap: 12px;
+}
+.margin20pxtop{
+    margin-top: 20px;
+}
+.margin20pxbottom{
+    margin-bottom: 20px;
+}
+.margin16pxtop{
+    margin-top: 16px;
+}
+.margin16pxbottom{
+    margin-bottom: 20px;
+}
+.margin8pxbottom{
+    margin-bottom: 8px;
+}
+.justifytextcenter{
+    text-align: center;
+}
+.inputLogin {
+    width: 342px;
+    height: 30px;
+    padding: 0;
+    border: none;
+    background-color: #1e1f22;
+    color: white;
+    outline: none;
+    font-family: "Mona Sans", sans-serif;
+    font-size: 18px;
+}
+.loginInputWrapper{
+    width: 342px;
+    height: 42px;
+    background-color: #1e1f22;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 1px 11px;
+    border-radius: 10px;
+    border: 2px solid #1e1f22;
+}
+.loginInputWrapper:focus-within{
+    border: 2px solid #6b5ffd;
+}
+.returnButton{
+    background-color: #4E5058;
+    border-color: #4E5058;
+    color:white;
+    margin-top: 20px;
+}
+
+.hidden{
+    position: absolute;
+    display: none;
+    opacity: 0;
+    pointer-events: none;
+}
+.loginForm{
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+@keyframes float {
     0%{transform: translateY(5px);}
     50%{transform: translateY(-5px);}
     100%{transform: translateY(5px);}
