@@ -1,73 +1,21 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Campus - Campus</title>
+    <title>Document</title>
     <link rel="stylesheet" href="CSS/styles.css">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Mona+Sans:ital,wght@0,200..900;1,200..900&display=swap"rel="stylesheet">
-
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 </head>
-
 <body>
     <header id="headerIndex">
-        <img src="MEDIA/campuslogo.png" class="campuslogo" alt="">
-        <p class="text24px" id="textoIndexHeader1">Campus Bucaramanga</p>
-        <p class="bigtext" id="textoIndexHeader2">Centro de Entrenamiento en Desarrollo de Software</p>
+    <img src="MEDIA/campuslogo.png" class="campuslogo" alt="">
+    <p class="bigtext class loginOptionHeader">Elige una opción para ingresar a la plataforma</p>
     </header>
-    <main>
-        <div class="smallcontainer">
-                <img src="MEDIA/hologramCircle.png" class="hologramCircle floater">
-                <img src="MEDIA/astronaut.svg" alt="" class="astronaut floater">
-                <IMG src="MEDIA/planet.svg" class="planet"></IMG>
-                <div class="blurcontainer">
-                    <p class="text24px margin16pxbottom">
-                        <strong>¡Registrate Ahora!</strong>
-                    </p>
-                    <p class="text14px margin16pxbottom justifytextcenter" id="">
-                        Únete a Campuslands y transforma tu vida en pocos meses para convertirte en Desarrollador de Software
-                        con el apoyo de expertos. Conecta con empresas líderes de Latinoamérica y EE. UU. para impulsar tu
-                        carrera laboral.
-                    </p>
-                    <button class="loginGoogle buttonLogin"><img src="MEDIA/icons/google.svg" alt="">Hacerlo con Google</button>
-                    <div id="politicasPrivacidadDiv">
-                        <p class="text14px" id="ppdArriba">Al crear una cuenta, acepta nuestras</p>
-                        <a href="" class="text14px" id="aSmallText">Politicas de privacidad de datos</a>
-                </div>
-            </div>
-        </div>
-        <div class="smallcontainer">
-            <img src="MEDIA/hologramPlanet.png" class="hologramPlanet floater">
-            <div class="blurcontainer">
-                    <div id="hideable">
-                    <p class="text24px margin8pxbottom"><strong>Si ya estás registrado</strong></p>
-                    <p class="text20px margin16pxbottom"><strong>Inicia Sesión</strong></p>
-                    <button class="loginGoogle buttonLogin margin20pxbottom"><img src="MEDIA/icons/google.svg" alt="">Hacerlo con Google</button>
-                    <button class="buttonLogin purpleButton">Usa un código mágico</button>
-                    <div class="infoCodigoMagico margin16pxtop margin16pxbottom">
-                        <img src="MEDIA/icons/magic.svg" alt="">
-                        <p class="text14px">Si ya estás registrado, ingresa tu correo de <strong>Gmail</strong> y te enviaremos un código mágico que te abrirá las puertas a nuestra plataforma. ¡Vamos allá!</p>
-                    </div>
-                    <button class="buttonLogin purpleButton margin16pxtop" onclick="showLogin()">Tengo una contraseña</button>
-                    </div>
-                    <form action="" class="hidden loginForm" id="login_Form">
-                        <div class="loginInputWrapper">
-                            <input type="text" class="inputLogin inputUser" placeholder="example@email.com">
-                        </div>
-                        <div class="loginInputWrapper">
-                            <input type="password" class="inputLogin inputPass" placeholder="contraseña">
-                        </div>
-                        <button type="submit" class="buttonLogin purpleButton">Ingresar</button>
-                    </form>
-                    <button class="buttonLogin returnButton hidden" id="return_Button" onclick="hideLogin()">Regresar</button>
-            </div>
-        </div>
-
-    </main>
-    <script src="js.js"></script>
+        <div class="loginOptionDiv">
+        <button class="loginCamper loginOption" onclick="window.location.href='PAGES/loginEstudiante.html'"><img src="MEDIA/icons/user-astronaut-solid-full.svg" alt=""><span>Camper</span></button>
+        <button class="loginTrainer loginOption"><img src="MEDIA/icons/user-tie-solid-full.svg" alt=""><span>Trainer</span></button>
+        <button class="loginAdmin loginOption"><img src="MEDIA/icons/laptop-code-solid-full.svg" alt=""><span>Coordinador</span></button>
+    </div>
 </body>
-
 </html>

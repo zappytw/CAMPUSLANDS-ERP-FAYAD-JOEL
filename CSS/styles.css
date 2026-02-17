@@ -4,7 +4,7 @@
     min-height:100px; 
     max-height:100px;
     max-width: 200px;
-    margin: 128px 410px 32px;
+    margin: 90px 410px 32px;
 }
 p {
     font-optical-sizing: auto;
@@ -28,7 +28,7 @@ main{
 .smallcontainer {
     background-color: #333333;
     width: 500px;
-    height: 462px;
+    min-height: 462px;
     border-radius: 2%;
     box-shadow: 0 0 100px #6b5ffd;
     display: flex;
@@ -37,9 +37,12 @@ main{
     position: relative;
     overflow: visible;
 }
+.tallSmallContainer {
+    height: 762px;
+}
 .blurcontainer{
     width: 370px;
-    height: 400px;
+    min-height: 400px;
     padding: 40px 64px 24px;
     border-radius: 2%;
     border: 4px solid rgb(152 153 156);
@@ -71,7 +74,7 @@ main{
     margin:0px;
 }
 #textoIndexHeader2{
-    margin: 0px 132.375px 32px;
+    margin: 0px 0 32px 0;
 }
 #headerIndex{
     display: flex;
@@ -87,10 +90,14 @@ body {
     background-color: #313338;
     width: 100%;
     height: 100vh;
-    animation-name: rotate;
-    animation: ease 1s infinite;
-    overflow: hidden;
+    overflow-y: auto;
+    overflow-x: hidden;
     font-family: "Mona Sans", sans-serif;
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+}
+html::-webkit-scrollbar {
+    display: none;
 }
 .buttonLogin{
     width: 100%;
@@ -235,6 +242,51 @@ a#aSmallText:hover {
     display: flex;
     flex-direction: column;
     gap: 20px;
+}
+.loginOption{
+    width: 150px;
+    height: 140px;
+    border-radius: 10px;
+    border: none;
+    background-color: #6b5ffd;
+    display: grid;
+    grid-template-rows: auto auto;
+    justify-items: center;
+    align-items: center;
+    transition: transform 0.5s cubic-bezier(0.3, 0.3, 0.27, 2);
+}
+.loginOption img {
+    height: 70px;
+}
+.loginOption span {
+    color: white;
+    font-family: "Mona sans", sans-serif;
+    font-size: 20px;
+    font-weight: bold;
+    align-self: flex-start;
+
+}
+.loginOptionDiv {
+    display: flex;
+    flex-wrap: wrap;
+    width: 530px;
+    justify-content: space-between;
+    position: relative;
+    align-items: center;
+    
+}
+.loginOption:hover{
+    transform: scale(1.10);
+
+}
+.loginOption:active{
+    transform: scale(0.98);
+}
+.loginOptionHeader{
+    margin-bottom: 50px;
+}
+.buttonSignin {
+    margin-bottom: 20px;
 }
 @keyframes float {
     0%{transform: translateY(5px);}
