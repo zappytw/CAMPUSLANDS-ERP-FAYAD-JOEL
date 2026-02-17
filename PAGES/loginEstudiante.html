@@ -36,7 +36,7 @@
                     <button class="buttonLogin purpleButton buttonSignin" id="signin_Button">Registrarse</button>
                     <button class="loginGoogle buttonLogin"><img src="../MEDIA/icons/google.svg" alt="">Hacerlo con Google</button>
                     </div>
-                    <form action="submit" class="hidden loginForm" id="signin_Form">
+                    <form action="" class="hidden loginForm" id="signin_Form">
                         <div class="loginInputWrapper">
                             <input type="text" class="inputLogin" id="inputFName" placeholder="Nombres">
                         </div>
@@ -44,7 +44,8 @@
                             <input type="text" class="inputLogin" id="inputLName" placeholder="Apellidos">
                         </div>
                         <div class="loginInputWrapper">
-                            <input type="text" class="inputLogin" id="inputId" placeholder="Número de Identificación">
+                            <input type="text" class="inputLogin" id="inputId" placeholder="Número de Identificación" maxlength="10" minlength="10">
+
                         </div>
                         <div class="loginInputWrapper">
                             <input type="text" class="inputLogin" id="inputAddress" placeholder="Dirección">
@@ -53,10 +54,10 @@
                             <input type="text" class="inputLogin" id="inputGuardian" placeholder="Acudiente">
                         </div>
                         <div class="loginInputWrapper">
-                            <input type="text" class="inputLogin" id="inputPhone" placeholder="Teléfono">
+                            <input type="text" class="inputLogin" id="inputPhone" placeholder="Teléfono" minlength="10" maxlength="10">
                         </div>
                         <div class="loginInputWrapper">
-                            <input type="text" class="inputLogin" id="inputUser" placeholder="Correo electrónico">
+                            <input type="email" class="inputLogin" id="inputUser" placeholder="Correo electrónico">
                         </div>
                         <div class="loginInputWrapper">
                             <input type="password" class="inputLogin" id="inputPass" placeholder="Contraseña">

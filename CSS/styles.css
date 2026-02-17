@@ -288,6 +288,14 @@ a#aSmallText:hover {
 .buttonSignin {
     margin-bottom: 20px;
 }
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+-webkit-appearance: none;
+margin: 0;
+}
+
+
+
 @keyframes float {
     0%{transform: translateY(5px);}
     50%{transform: translateY(-5px);}

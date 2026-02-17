@@ -9,6 +9,7 @@ const smallContainer = document.querySelectorAll(".smallcontainer")
 const blurContainer = document.querySelectorAll(".blurcontainer")
 const signinFormElement = document.getElementById("signin_Form");
 const loginFormElement = document.getElementById("login_Form")
+let campers = JSON.parse(localStorage.getItem("campers")) || [];
 returnButton.addEventListener("click", hideLogin);
 
 signinButton.addEventListener("click", showSignin);
@@ -55,38 +56,49 @@ blurContainer.forEach(container => {
       container.classList.remove("tallSmallContainer");
   });
 }
-signinFormElement.addEventListener("submit", (e) => {
-    e.preventDefault();
 
-    const usuario = {
-        nombres: document.getElementById("inputFName").value,
-        apellidos: document.getElementById("inputLName").value,
-        identificacion: document.getElementById("inputId").value,
-        direccion: document.getElementById("inputAddress").value,
-        acudiente: document.getElementById("inputGuardian").value,
-        telefono: document.getElementById("inputPhone").value,
-        email: document.getElementById("inputUser").value,
-        pass: document.getElementById("inputPass").value,
-        
-    };
+signinForm.addEventListener("submit",function(event){
+  event.preventDefault()
 
-    localStorage.setItem("datosUsuario", JSON.stringify(usuario));
-
-    alert("¡Registro guardado!");
-    
-    signinFormElement.reset();
-    hideSignin(); 
+  let camper = {
+    fname: document.getElementById("inputFName").value,
+    lname: document.getElementById("inputLName").value,
+    idNum: document.getElementById("inputId").value,
+    adress: document.getElementById("inputAddress").value,
+    guardian: document.getElementById("inputGuardian").value,
+    phone: document.getElementById("inputPhone").value,
+    user: document.getElementById("inputUser").value,
+    pass: document.getElementById("inputPass").value,
+  }
+let signInFindUser = campers.find(u => u.user === camper.user)
+if (signInFindUser){
+  alert("Este usuario ya està registrado!")
+} else{
+  alert('Registro Guardado!');
+  campers.push(camper)
+  localStorage.setItem("campers", JSON.stringify(campers))
+  signinForm.reset
+  hideSignin()
+}
 });
-loginFormElement.addEventListener("submit", (e) => {
-    let usuario = JSON.parse(localStorage.getItem("datosUsuario"));
-    e.preventDefault();
-    let usuarioLogin = {
-        emailLogin: document.getElementById("inputUserLogin").value,
-        passLogin: document.getElementById("inputPassLogin").value,
-    };
-    if (usuarioLogin.emailLogin == usuario.email && usuarioLogin.passLogin == usuario.pass){
-      window.location.href="pantallaPrincipalEstudiante.html"
-    } else{
-      alert("Credenciales incorrectas!")
+
+  loginForm.addEventListener("submit", function(event){
+    event.preventDefault()
+    let loginAttempt = {
+      user:document.getElementById("inputUserLogin").value,
+      pass:document.getElementById("inputPassLogin").value,
     }
-  })
+try {
+    let loginFindUser = campers.find(u => u.user === loginAttempt.user)
+    let loginFindPass = loginFindUser.pass === loginAttempt.pass
+    if (loginFindUser && loginFindPass){
+      alert("Sesiòn iniciada!")
+      window.location.href("pantallaPrincipalEstudiante.html")
+    } else {
+      alert('Credenciales incorrectas!');
+    }
+} catch(usuarioInexistente) {
+  alert('El usuario no existe');
+}
+    });
+
